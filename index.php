@@ -9,7 +9,7 @@ if (isset($_GET["status"])) {
     if ($_GET["status"] == "loggedout") {
         echo "<p class='notify'>Olet kirjautunut ulos.</p>";
     }
-    if ($_GET["status"] == "ok") {
+    if ($_GET["status"] == "feedback") {
         echo "<p class='notify'>Kiitos palautteestasi!</p>";
     }
 }
@@ -21,13 +21,13 @@ if (isset($_GET["status"])) {
 <div class="container">
     <p>Tällä sivustolla voit tehdä treeniksen käyttösopimuksen,
         tulostaa ja allekirjoittaa sen ja toimittaa sitten treeniksen yhteyshenkilölle.<br>
-        Voit myös päivittää oman sopimuksen tietoja.
+       <br> Voit myös päivittää oman sopimuksen tietoja.
     </p>
 </div>
 
 
 
-<div class="container">
+<div class="nappula">
     <button type="button"><a class="button" href='signup.php'>Luo uusi käyttäjä</a></button>
 </div>
 

@@ -2,6 +2,11 @@
 include_once 'header.php';
 ?>
 <!-- Divin avaus tulee headeristä div class="wrapper"-->
+
+
+<!-- TÄMÄ TAITAA OLLA TURHA SIVU EI KÄYTETÄ MISSÄÄN -->
+
+
         
 <div class="container">
 <h2>Kirjauduit ULOS </h2>

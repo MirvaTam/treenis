@@ -17,7 +17,10 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
+.palautelomake {
+  font-weight: bold;
+  background-color: aqua;
+}
 .palaute:focus, input:focus { 
   /* yritän saada siniset rajat pois tiedonsyöttö kentistä*/
   outline: none !important;
@@ -25,18 +28,28 @@ body {
 }
 .container {
   margin: auto;
-  background-color: #e4dc01;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
+}
+.nappula {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin: 20px;
+  padding: 5px;
 }
 .form {
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height:fit-content;
 }
 
 input {

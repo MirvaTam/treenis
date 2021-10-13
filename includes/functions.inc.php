@@ -116,4 +116,28 @@ else if ($checkPwd === true){ // kun tiedot oikein mihin mennään, mitä tehdä
 }
 }
 
+// FEEDBACK FUNKTIO ALLA
 
+function createFeedback($conn, $feedback_txt, $feedback_email){
+    $sql = "INSERT INTO feedback (feedbackComment, feedbackEmail) VALUES (?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../index.php?error=stmtfailed"); 
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss", $feedback_txt, $feedback_email);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../index.php?status=feedback"); 
+    exit();
+
+}
+/*$conn = mysqli_connect("localhost", "root","", "treenis");
+$query ="INSERT INTO feedback (feedbackComment, feedbackEmail) VALUES ($feedback_txt, '$feedback_email')";
+$result = mysqli_query($conn, $query);
+if($result)
+  echo 'Thank you for your feedback. We\'ll appreciate!';
+else
+die("Something terrible happened. Please try again. ");
+*/
