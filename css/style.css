@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: grey;
+}
+.wrapper {
+  background-color: #e4dc01;
+}
+
+#logo, img {
+  width: 100px;
+  height: 100px;
+  display: block; /*  display block + margin l+r auto == center the image*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.palaute:focus, input:focus { 
+  /* yritän saada siniset rajat pois tiedonsyöttö kentistä*/
+  outline: none !important;
+  border: 1px solid grey;
+}
+.container {
+  margin: auto;
+  background-color: #e4dc01;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+.form {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+input {
+  border: none;
+  color: black;
+  width: 500px;
+  padding: 10px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+button,
+.button {
+  border: none;
+  color: black;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+button:hover,
+.button:hover {
+  background-color: #8747b7;
+  border-radius: 15px;
+  color: #f8fff3;
+}
+
+h2 {
+  margin: 0px;
+  padding: 6px;
+}
+
+h4 {
+  margin: 0px;
+  padding: 6px;
+}
+
+.notify {
+  text-align: center;
+  color: #8747b7;
+  font-size: 25px;
+  font-weight: bold;
+}
+footer,
+footer > p {
+  text-align: center;
+  padding: 5px;
+  font-style: italic;
+}
+/* NAVIGAATIO ASETUKSET */
+
+.nav {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.nav > .nav-header {
+  display: inline;
+}
+.nav > .nav-header > .nav-title {
+  /* Särö-nimi vasemmalla */
+  display: inline-block;
+  font-size: 22px;
+  color: #38045f;
+  font-weight: 500;
+  padding: 10px 10px 10px 10px;
+}
+.nav > .nav-btn {
+  display: none;
+}
+.nav > .nav-links {
+  display: inline;
+  float: right;
+}
+.nav > .nav-links > ul li a {
+  display: block;
+  padding: 0 8px;
+  color: #38045f;
+  line-height: 40px;
+  text-decoration: none;
+}
+.nav > .nav-links > ul {
+  padding: 0;
+  margin-top: 5px;
+  list-style: none;
+  position: relative;
+}
+.nav > .nav-links > ul li {
+  display: inline-block;
+}
+.nav > .nav-links > ul li a:hover {
+  background-color: #b7b200;
+  border-radius: 5px;
+  color: #f8fff3;
+}
+.nav > #nav-check {
+  display: none;
+}
+@media (max-width: 750px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,
+  .nav #nav-check:checked ~ .nav-btn > label {
+    background-color: #b7b200; /* span labelin tausta */
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #112800; /* kolme viivaa valikko */
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #b7b200;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > ul li a {
+    display: block;
+    width: 100%;
+  }
+
+  /*   */
+
+  .nav > .nav-links > ul li {
+    display: block;
+    margin-bottom: 20px;
+    padding: 0;
+    background-color: #b7b200;
+  }
+  .nav > .nav-links > ul li a {
+    margin-left: 40%;
+  }
+
+  /*   */
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+/* 
+TABLE Generic Styling, for Desktops/Laptops 
+*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* Zebra striping every other
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }  */
+th {
+  background: #38045f;
+  color: white;
+  font-weight: bold;
+}
+td,
+th {
+  padding: 6px;
+  text-align: left;
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/ /*
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */ /*
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) 
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */ /*
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */ /*
+		position: absolute;
+		/* Top/left values mimic padding */ /*
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}*/
+
+/*
+	Label the data
+	*/ /*
+	td:nth-of-type(1):before { content: "First Name"; }
+	td:nth-of-type(2):before { content: "Last Name"; }
+	td:nth-of-type(3):before { content: "Job Title"; }
+	td:nth-of-type(4):before { content: "Favorite Color"; }
+	td:nth-of-type(5):before { content: "Wars of Trek?"; }
+	td:nth-of-type(6):before { content: "Secret Alias"; }
+	td:nth-of-type(7):before { content: "Date of Birth"; }
+	td:nth-of-type(8):before { content: "Dream Vacation City"; }
+	td:nth-of-type(9):before { content: "GPA"; }
+	td:nth-of-type(10):before { content: "Arbitrary Data"; } 
+} */
