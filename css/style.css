@@ -5,6 +5,7 @@
 }
 body {
   background-color: grey;
+  font-family:Arial, Helvetica, sans-serif;
 }
 .wrapper {
   background-color: #e4dc01;
@@ -43,8 +44,9 @@ body {
 p {
   margin: 20px;
   padding: 5px;
+  font-size: 16px;
 }
-.form {
+.form, .form-vastuuhlo, .form-bandi {
   margin: auto;
   display: flex;
   justify-content: center;
@@ -117,7 +119,7 @@ footer > p {
   display: inline;
 }
 .nav > .nav-header > .nav-title {
-  /* Särö-nimi vasemmalla */
+  /* Sivuston nimi vasemmalla */
   display: inline-block;
   font-size: 22px;
   color: #38045f;

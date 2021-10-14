@@ -111,6 +111,7 @@ else if ($checkPwd === true){ // kun tiedot oikein mihin mennään, mitä tehdä
     session_start();
     $_SESSION["userid"] =  $uidExists["usersId"];
     $_SESSION["useruid"] =  $uidExists["usersUid"];
+    $_SESSION["username"] =  $uidExists["usersName"];
     header("location: ../profile.php");
     exit();
 }
