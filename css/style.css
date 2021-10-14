@@ -5,6 +5,7 @@
 }
 body {
   background-color: grey;
+  font-family:Arial, Helvetica, sans-serif;
 }
 .wrapper {
   background-color: #e4dc01;
@@ -17,7 +18,10 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
+.palautelomake {
+  font-weight: bold;
+  background-color: aqua;
+}
 .palaute:focus, input:focus { 
   /* yritän saada siniset rajat pois tiedonsyöttö kentistä*/
   outline: none !important;
@@ -25,18 +29,29 @@ body {
 }
 .container {
   margin: auto;
-  background-color: #e4dc01;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
 }
-.form {
+.nappula {
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+}
+
+p {
+  margin: 20px;
+  padding: 5px;
+  font-size: 16px;
+}
+.form, .form-vastuuhlo, .form-bandi {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:fit-content;
 }
 
 input {
@@ -104,7 +119,7 @@ footer > p {
   display: inline;
 }
 .nav > .nav-header > .nav-title {
-  /* Särö-nimi vasemmalla */
+  /* Sivuston nimi vasemmalla */
   display: inline-block;
   font-size: 22px;
   color: #38045f;

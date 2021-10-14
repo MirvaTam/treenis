@@ -7,8 +7,8 @@ include_once 'header.php';
 <div class="container">
     <h2>Särö treenismaksusopimus - Taulukko katselemiseen - noutaa tiedot<br>
     <?php
-          if (isset($_SESSION["useruid"])) {
-          echo "Olet kirjautunut sisään nimellä: " . $_SESSION["useruid"] . "</h2>";
+          if (isset($_SESSION["username"])) {
+          echo "Olet kirjautunut sisään nimellä: " . $_SESSION["username"] . "</h2>";
         }
     ?>
 </div>
@@ -25,16 +25,12 @@ include_once 'header.php';
 
         <tr>
             <td>Y-tunnus: 2743674-4</td>
-            <td>henkilötunnus</td>
+            <td>puh.nro</td>
         </tr>
 
         <tr>
             <td>info@saromusiikki.fi</td>
             <td>email</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>puh.nro</td>
         </tr>
     </table>
 
@@ -77,7 +73,7 @@ include_once 'header.php';
 
     <table class="sigut">
         <h4>Allekirjoitukset</h4>
-        <tr><td>Paikka pvm</td></tr>
+        <tr><td>Helsingissä (tänään pvm)</td></tr>
         <tr><td>Yhdistys</td><td>Vastuuhenkilö</td></tr>
         <tr><td>_____________________</td><td>_____________________</td></tr>
         <tr><td>Mari Korsu (puheenjohtaja)</td><td>nimi</td></tr>

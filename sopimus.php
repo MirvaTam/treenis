@@ -3,80 +3,68 @@ include_once 'header.php';
 ?>
 
 <!-- Divin avaus tulee headeristä div class="wrapper"-->
-        
+
 <div class="container">
-    <h2>Särö treenismaksusopimus - luo FORMI tiedonsyöttöön</h2>
+    <h2>Särö treenismaksusopimus - luo FORMI tiedonsyöttöön<br>
+
+        <?php
+        if (isset($_SESSION["useruid"])) {
+            echo "Olet kirjautunut sisään nimellä: " . $_SESSION["useruid"] . "</h2>";
+        }
+        ?>
 </div>
-    
-    <table class="osapuolet">
-        <h4>Sopimusosapuolet</h4>
-        <th>Tilan haltija: <br>(myöhemmin Yhdistys)</th>
-        <th>Treeniksen käyttäjä: <br>(myöhemmin Vastuuhenkilö)</th>
 
-        <tr>
-            <td>Särö (Tyttöjen rokkileiriyhdistys ry)</td>
-            <td>Käyttäjä vastuuhlö nimi</td>
-        </tr>
+<section class="form-vastuuhlo">
+    <form method="post">
+    <label for="band">1 Treenaavan bändin nimi</label><br>
+        <input type="text" name="band" placeholder="Bändin nimi" autocomplete="off"><br>
+        <label for="email">2 Vastuuhenkilön email</label><br>
+        <input type="text" name="email" placeholder="email" autocomplete="off"><br>
 
-        <tr>
-            <td>Y-tunnus: 2743674-4</td>
-            <td>henkilötunnus</td>
-        </tr>
+        <label for="Startdate">3 Sopimuksen aloitus pvm</label><br>
+        <input type="date" name="StartDate" placeholder="aloitus pvm" autocomplete="off"><br>
+        <label for="EndDate">4 Sopimuksen lopetus pvm (piilota)</label><br>
+        <input type="date" name="EndDate" placeholder="lopetus pvm" autocomplete="off"><br>
 
-        <tr>
-            <td>info@saromusiikki.fi</td>
-            <td>email</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>puh.nro</td>
-        </tr>
-    </table>
 
-    <table class="maksu">
-        <h4>Treenismaksu</h4>
-        <tr>
-            <td>Treenismaksu määräytyy bändin jäsenmäärän mukaisesti. <br>
-                Treenismaksu maksetaan kalenterikuukausittain. Maksun eräpäivä on joka kk 2. päivä. <br>
-                Vastuuhenkilön tulee maksaa treenismaksu kokonaisuudessaan yhdistyksen tilille.</td>
-        </tr>
-        <tr>
-            <td><br>Yhdistyksellä on oikeus korottaa tai laskea treenismaksua treeniksen käyttäjien määrän muuttuessa tai tilan vuokran tai muiden kulujen noustessa. Maksun muutoksista ilmoitetaan yhtä (1) kuukautta ennen korotuksen voimaan tuloa.</td>
-        </tr>
-        <tr>
-            <td><br>Vastuuhenkilöllä on oikeus irtisanoa sopimus päättymään yhden (1) kuukauden irtisanomisajalla. </td>
-        </tr>
-        <tr>
-            <td><br>Treenismaksun suuruus sopimuksen tekohetkellä on XX euroa per henkilö. Yhdistyksen hallituksen jäsenille treeniksen käyttömaksu on 0 euroa.</td>
-        </tr>
-    </table>
+        <label for="vastuuhlo">*Vastuuhenkilön nimi</label><br>
+        <input type="text" name="vastuuhlo" placeholder="Etunimi Sukunimi" autocomplete="off"><br>
+        <label for="hetu">Vastuuhenkilön henkilötunnus</label><br>
+        <input type="text" name="hetu" placeholder="hetu" autocomplete="off"><br>
+        <label for="puh">Vastuuhenkilön puhelinnumero</label><br>
+        <input type="text" name="puh" placeholder="puh.nro" autocomplete="off"><br>
+       
+        <br><button type="submit" name="submit">Tallenna sopimuksen perus tiedot</button>
+    </form>
+</section>
 
-    <table class="bandi">
-        <h4>Bändin nimi: </h4>
-        <tr>
-            <td>Bändin jäsenet: X hlö (nimet listattu alla)</td>
-        </tr>
-        <tr>
-            <td> Treenismaksu yht: xx euroa / kk.</td>
-        </tr>
-        <tr>
-            <td>nimi</td>
-        </tr>
-        <tr>
-            <td>nimi</td>
-        </tr>
-        <tr>
-            <td>nimi</td>
-        </tr>
-    </table>
-
-    <table class="sigut">
-        <h4>Allekirjoitukset</h4>
-        <tr><td>Paikka pvm</td></tr>
-        <tr><td>Yhdistys</td><td>Vastuuhenkilö</td></tr>
-        <tr><td>_____________________</td><td>_____________________</td></tr>
-        <tr><td>Mari Korsu (puheenjohtaja)</td><td>nimi</td></tr>
-    </table>
+<section class="form-bandi">
+    <form method="post">
+        <label for="jasenmaara">Bändin jäsenten määrä</label><br>
+        <select type="number" name="jasenmaara">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <br>
+        <label for="nimi1">Bändin jäsenen nimi</label><br>
+        <input type="text" name="nimi1" autocomplete="off"><br>
+        <label for="nimi2">Bändin jäsenen nimi</label><br>
+        <input type="text" name="nimi2" autocomplete="off"><br>
+        <label for="nimi3">Bändin jäsenen nimi</label><br>
+        <input type="text" name="nimi3" autocomplete="off"><br>
+        <label for="nimi4">Bändin jäsenen nimi</label><br>
+        <input type="text" name="nimi4" autocomplete="off"><br>
+        <label for="nimi5">Bändin jäsenen nimi</label><br>
+        <input type="text" name="nimi5" autocomplete="off"><br>
+        <label for="nimi6">Bändin jäsenen nimi</label><br>
+        <input type="text" name="nimi6" autocomplete="off"><br>
+        <br><button type="submit" name="submit">Tallenna bändiläisten tiedot</button>
+    </form>
+</section>
 
 <?php
 include_once 'footer.php';
