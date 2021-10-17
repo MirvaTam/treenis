@@ -16,6 +16,6 @@ if(isset($_POST["submit"])){
     }   
 }
 else {
-    header("location: ../profile.php");
+    header("location: ../sopimus.php");
     exit();
 }

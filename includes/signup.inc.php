@@ -11,8 +11,6 @@ if (isset($_POST["submit"])){
     require_once 'dbcon.inc.php';
     require_once 'functions.inc.php';
 
-    createUser($conn, $name, $email, $username, $pwd);
-
     if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false){
         header("location: ../signup.php?error=emptyinput"); 
         exit();
@@ -36,6 +34,8 @@ if (isset($_POST["submit"])){
         header("location: ../signup.php?error=usernametaken"); 
         exit();
     }
+    
+    createUser($conn, $name, $email, $username, $pwd);
 }
 else {
     header("location: ../signup.php"); // go back one folder with the ../

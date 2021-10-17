@@ -45,8 +45,9 @@ p {
   margin: 20px;
   padding: 5px;
   font-size: 16px;
+  text-align: center;
 }
-.form, .form-vastuuhlo, .form-bandi {
+.form, .form-vastuuhlo, .form-jasenet {
   margin: auto;
   display: flex;
   justify-content: center;
@@ -54,7 +55,7 @@ p {
   height:fit-content;
 }
 
-input {
+input, select {
   border: none;
   color: black;
   width: 500px;

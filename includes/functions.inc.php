@@ -47,7 +47,6 @@ function uidExists($conn, $username, $email){
     mysqli_stmt_bind_param($stmt, "ss", $username, $email);
     mysqli_stmt_execute($stmt);
 
-
     $resultData = mysqli_stmt_get_result($stmt);
 
     if ($row = mysqli_fetch_assoc($resultData)){
@@ -78,8 +77,6 @@ function createUser($conn, $name, $email, $username, $pwd){
     exit();
 
 }
-
-
 
 // LOGIN FUNKTIOT ALLA
 
@@ -112,9 +109,47 @@ else if ($checkPwd === true){ // kun tiedot oikein mihin mennään, mitä tehdä
     $_SESSION["userid"] =  $uidExists["usersId"];
     $_SESSION["useruid"] =  $uidExists["usersUid"];
     $_SESSION["username"] =  $uidExists["usersName"];
+    $_SESSION["useremail"] =  $uidExists["usersEmail"];
     header("location: ../profile.php");
     exit();
 }
+}
+
+// BANDIN LUONTI FUNKTIO ALLA
+
+function createBand($conn, $band, $startdate, $tel, $members){
+    $sql = "INSERT INTO bands (bandsName, bandsStart, bandsTel, bandsMembers) VALUES (?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../index.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ssss", $band, $startdate, $tel, $members);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+   // $_SESSION["bandsname"] =  $sql["bandsName"];
+  //  $_SESSION["bandsmembers"] =  $sql["bandsMembers"];
+    header("location: ../sopimus.php?status=band");
+    exit();
+}
+
+// MEMBERS FUNKTIO ALLA
+
+function createMembers($conn, $band, $member){
+    $sql = "INSERT INTO members (band, member) VALUES (?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../index.php?error=stmtfailed"); 
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss", $band, $member);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../sopimus.php?status=members"); 
+    exit();
+
 }
 
 // FEEDBACK FUNKTIO ALLA
@@ -134,11 +169,3 @@ function createFeedback($conn, $feedback_txt, $feedback_email){
     exit();
 
 }
-/*$conn = mysqli_connect("localhost", "root","", "treenis");
-$query ="INSERT INTO feedback (feedbackComment, feedbackEmail) VALUES ($feedback_txt, '$feedback_email')";
-$result = mysqli_query($conn, $query);
-if($result)
-  echo 'Thank you for your feedback. We\'ll appreciate!';
-else
-die("Something terrible happened. Please try again. ");
-*/

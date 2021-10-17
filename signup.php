@@ -31,9 +31,7 @@ if (isset($_GET["error"])){
 <div class="container">
     <h2>Luo uusi käyttäjä (bändisopparin tekemistä varten)</h2>
 </div><div>
-    <h5> divi ilman classia ja background tulee wrapperista.
-        En halua tähän vaan tuon h2 otsikon alle kappaletekstinä mutta rivitettynä.
-        Käyttäjä on bändin vastuuhenkilö, jonka nimissä treeniksen käyttösopimus tehdään.</h5>
+    <p> Käyttäjä on bändin vastuuhenkilö, jonka nimissä treeniksen käyttösopimus tehdään.</p>
 </div>
 
 <section class="form">

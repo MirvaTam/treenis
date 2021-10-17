@@ -33,18 +33,18 @@ session_start();
     <div class="nav-links">
       <ul>
         <li><a class="active" href="index.php">Etusivu</a></li>
-        <li><a href="signup.php">Luo käyttäjä</a></li>
         <?php
-          if (isset($_SESSION["useruid"])) {
-          echo "<li><a href='sopimus.php'>Luo sopimus</a></li>";
-          echo "<li><a href='profile.php'>Oma sopimus</a></li>";
+        if (isset($_SESSION["useruid"])) {
+          echo "<li><a href='profile.php'>Oma Profiili</a></li>";
+          echo "<li><a href='sopimus.php'>Sopimus</a></li>";
           echo "<li><a href='includes/logout.inc.php'>Kirjaudu ulos</a></li>";
         } else {
+          echo "<li><a href='signup.php'>Luo käyttäjä</a></li>";
           echo "<li><a href='login.php'>Kirjaudu</a></li>";
         }
-    ?>
+        ?>
       </ul>
     </div>
   </header>
-  <div class="wrapper"> <!-- MUISTA tämä eka div-pitää tulla mukaan -->
-
+  <div class="wrapper">
+    <!-- MUISTA tämä eka div-pitää tulla mukaan -->
