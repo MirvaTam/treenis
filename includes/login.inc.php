@@ -16,6 +16,6 @@ if(isset($_POST["submit"])){
     }   
 }
 else {
-    header("location: ../sopimus.php");
+    header("location: ../oma.php");
     exit();
 }

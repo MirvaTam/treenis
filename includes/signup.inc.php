@@ -15,16 +15,16 @@ if (isset($_POST["submit"])){
         header("location: ../signup.php?error=emptyinput"); 
         exit();
     }
-
-    if (invalidUid($username) !== false){
+/* en tiedä miksi ei toimi kaksi ao juttua */ 
+    /*if (invalidUid($username) !== false){
         header("location: ../signup.php?error=invaliduid"); 
         exit();
-    }
+    }*/
 
-    if (invalidEmail($email) !== false){
+    /*if (invalidEmail($email) !== false){
         header("location: ../signup.php?error=invalidemail"); 
         exit();
-    }
+    }*/
 
     if (pwdMatch($pwd, $pwdRepeat) !== false){
         header("location: ../signup.php?error=pwdnomatch"); 
