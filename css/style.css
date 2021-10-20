@@ -4,68 +4,115 @@
   box-sizing: border-box;
 }
 body {
-  background-color: grey;
-  font-family:Arial, Helvetica, sans-serif;
+  /*background-color: white;*/
+  font-family: Arial, Helvetica, sans-serif;
 }
-.wrapper {
-  background-color: #e4dc01;
+.wrapper { /* usage? */
+  margin: 10px;
+  padding: 10px;
 }
-
-#logo, img {
-  width: 100px;
-  height: 100px;
+.column { /* usage? */
+  float: left;
+  width: 50%;
+  padding: 15px;
+}
+.flex_container { /* etusivu section +  */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* keskitä vaaka-suunnassa*/
+}
+.flex_container > div { /* etusivu */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* keskitä vaaka-suunnassa*/
+  /*background-color: #8747b7;*/
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.flex_container_oma { /* oma-sivu section +  */
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* keskitä vaaka-suunnassa*/
+}
+.flex_container_oma > div { /* oma-sivu */
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+}
+.nappula { /* usage? */
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#iso_kuva {
+  /* ETUSIVUN KUVAN ASETUKSET */
+  max-width: 100%;
+  height: auto;
   display: block; /*  display block + margin l+r auto == center the image*/
   margin-left: auto;
   margin-right: auto;
 }
-.palautelomake {
-  font-weight: bold;
-  background-color: aqua;
-}
-.palaute:focus, input:focus { 
-  /* yritän saada siniset rajat pois tiedonsyöttö kentistä*/
-  outline: none !important;
-  border: 1px solid grey;
-}
-.container {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-}
-.nappula {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 p {
-  margin: 20px;
+  margin: 10px;
   padding: 5px;
-  font-size: 16px;
+  font-size: 18px;
+  text-align: center;
 }
-.form, .form-vastuuhlo, .form-bandi {
+
+.form-yellow {
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  height:fit-content;
+  height: fit-content;
+  background-color: #ffc102;
+  border-radius: 10px;
+  padding: 20px;
 }
+.form-purple{ /* tee tämmönen ja poista muut */
+  background-color: #8656C2;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+.form-grey { /* tee tämmönen ja poista muut */
+  background-color: #B9B9B9;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+/* !POISTA! jatkossa form-grey 
+.form-band, .form-jasenet {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  background-color: #B9B9B9;
+  border-radius: 10px;
+  padding: 20px;
+} */
 
-input {
+input,
+select {
   border: none;
   color: black;
-  width: 500px;
   padding: 10px 32px;
   text-decoration: none;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  width: 100%;
   border-radius: 15px;
 }
-button,
+input:focus, select:focus {
+  /* yritän saada siniset rajat pois tiedonsyöttö kentistä*/
+  outline: none !important;
+  border: 1px solid grey;
+}
+button, button > a,
 .button {
   border: none;
   color: black;
@@ -77,14 +124,15 @@ button,
   cursor: pointer;
   border-radius: 15px;
 }
-button:hover,
+button:hover, button > a:hover,
 .button:hover {
-  background-color: #8747b7;
+  background-color: #33076A;
   border-radius: 15px;
   color: #f8fff3;
 }
 
 h2 {
+  text-align: center;
   margin: 0px;
   padding: 6px;
 }
@@ -100,12 +148,26 @@ h4 {
   font-size: 25px;
   font-weight: bold;
 }
+/* FOOTER + LOGO */
+
 footer,
 footer > p {
   text-align: center;
-  padding: 5px;
   font-style: italic;
+  color: #f8fff3;
+  font-weight: bold;
+  /*margin-bottom: 10px;
+  padding: 10px;*/
 }
+
+#logo {
+  width: 100px;
+  height: 100px;
+  display: block; /*  display block + margin l+r auto == center the image*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* NAVIGAATIO ASETUKSET */
 
 .nav {
@@ -114,6 +176,8 @@ footer > p {
   position: relative;
   text-transform: uppercase;
   font-size: 18px;
+  font-weight: bold;
+  background-color: #ffc102;
 }
 .nav > .nav-header {
   display: inline;
@@ -122,8 +186,8 @@ footer > p {
   /* Sivuston nimi vasemmalla */
   display: inline-block;
   font-size: 22px;
-  color: #38045f;
-  font-weight: 500;
+  font-weight: bold;
+  color: #33076a;
   padding: 10px 10px 10px 10px;
 }
 .nav > .nav-btn {
@@ -136,13 +200,15 @@ footer > p {
 .nav > .nav-links > ul li a {
   display: block;
   padding: 0 8px;
-  color: #38045f;
+  margin: 2px;
+  color: #33076a;
   line-height: 40px;
   text-decoration: none;
 }
 .nav > .nav-links > ul {
   padding: 0;
   margin-top: 5px;
+  margin-right: 5px;
   list-style: none;
   position: relative;
 }
@@ -150,14 +216,14 @@ footer > p {
   display: inline-block;
 }
 .nav > .nav-links > ul li a:hover {
-  background-color: #b7b200;
+  background-color: #8656c2;
   border-radius: 5px;
   color: #f8fff3;
 }
 .nav > #nav-check {
   display: none;
 }
-@media (max-width: 750px) {
+@media (max-width: 700px) {
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;
@@ -172,19 +238,19 @@ footer > p {
   }
   .nav > .nav-btn > label:hover,
   .nav #nav-check:checked ~ .nav-btn > label {
-    background-color: #b7b200; /* span labelin tausta */
+    background-color: #8656c2; /* span labelin tausta */
   }
   .nav > .nav-btn > label > span {
     display: block;
     width: 25px;
     height: 10px;
-    border-top: 2px solid #112800; /* kolme viivaa valikko */
+    border-top: 2px solid #33076a; /* kolme viivaa valikko */
   }
   .nav > .nav-links {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #b7b200;
+    background-color: #8656c2;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
@@ -202,7 +268,7 @@ footer > p {
     display: block;
     margin-bottom: 20px;
     padding: 0;
-    background-color: #b7b200;
+    background-color: #8656c2;
   }
   .nav > .nav-links > ul li a {
     margin-left: 40%;
@@ -216,7 +282,23 @@ footer > p {
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
-}
+  .column {
+    width: 100%;
+  }
+  .flex_container_oma { /* oma-sivu section +  */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* keskitä vaaka-suunnassa*/
+  }
+  .flex_container_oma > div { /* oma-sivu */
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+  }
+
+
+} /* END OF @media (max-width: 870px)*/
+
 
 /* 
 TABLE Generic Styling, for Desktops/Laptops 
@@ -224,21 +306,33 @@ TABLE Generic Styling, for Desktops/Laptops
 table {
   width: 100%;
   border-collapse: collapse;
+  margin: 10px;
 }
-/* Zebra striping every other
-  tr:nth-of-type(odd) { 
-    background: #eee; 
-  }  */
-th {
-  background: #38045f;
+
+th{
+  background: #8656c2;
   color: white;
   font-weight: bold;
+  text-transform: uppercase;
+  padding: 6px;
+  text-align: left;
+  line-height: 30px;
 }
-td,
-th {
+td {
+  line-height: 20px;
+  padding: 5px;
+}
+.tuloste > td {
+  width:50%;
   padding: 6px;
   text-align: left;
 }
+
+/* Zebra striping every other
+.oma_kooste > tr:nth-of-type(odd) { 
+    background: #528CBC; 
+  }  */
+
 
 /* 
 Max width before this PARTICULAR table gets nasty

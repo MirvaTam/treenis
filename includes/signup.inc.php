@@ -11,22 +11,20 @@ if (isset($_POST["submit"])){
     require_once 'dbcon.inc.php';
     require_once 'functions.inc.php';
 
-    createUser($conn, $name, $email, $username, $pwd);
-
     if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false){
         header("location: ../signup.php?error=emptyinput"); 
         exit();
     }
-
-    if (invalidUid($username) !== false){
+/* en tiedä miksi ei toimi kaksi ao juttua */ 
+    /*if (invalidUid($username) !== false){
         header("location: ../signup.php?error=invaliduid"); 
         exit();
-    }
+    }*/
 
-    if (invalidEmail($email) !== false){
+    /*if (invalidEmail($email) !== false){
         header("location: ../signup.php?error=invalidemail"); 
         exit();
-    }
+    }*/
 
     if (pwdMatch($pwd, $pwdRepeat) !== false){
         header("location: ../signup.php?error=pwdnomatch"); 
@@ -36,6 +34,8 @@ if (isset($_POST["submit"])){
         header("location: ../signup.php?error=usernametaken"); 
         exit();
     }
+    
+    createUser($conn, $name, $email, $username, $pwd);
 }
 else {
     header("location: ../signup.php"); // go back one folder with the ../

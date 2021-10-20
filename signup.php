@@ -27,16 +27,14 @@ if (isset($_GET["error"])){
     }
 }
 ?>
-
-<div class="container">
-    <h2>Luo uusi käyttäjä (bändisopparin tekemistä varten)</h2>
+<section class="flex_container">
+<div>
+    <h2>Luo uusi käyttäjä</h2>
 </div><div>
-    <h5> divi ilman classia ja background tulee wrapperista.
-        En halua tähän vaan tuon h2 otsikon alle kappaletekstinä mutta rivitettynä.
-        Käyttäjä on bändin vastuuhenkilö, jonka nimissä treeniksen käyttösopimus tehdään.</h5>
+    <p> Käyttäjä on bändin vastuuhenkilö, jonka nimissä treeniksen käyttösopimus tehdään. Täytä vastuuhenkilön tiedot tähän ja pääset tekemään bändille treeniksen käytöstä sopimuksen.</p>
 </div>
 
-<section class="form">
+<div class="form-yellow">
     <form action="includes/signup.inc.php" method="post">
         <input type="text" name="name" placeholder="Etunimi Sukunimi" autocomplete="off" autofocus>
         <br><input type="text" name="email" placeholder="Email" autocomplete="off">
@@ -45,7 +43,8 @@ if (isset($_GET["error"])){
         <br><input type="password" name="pwdrepeat" placeholder="Salasana uudelleen" autocomplete="off">
         <br><button type="submit" name="submit">Luo uusi käyttäjä</button>
     </form>
-    </section>
+</div>
+</section>
 
 
 
