@@ -16,8 +16,8 @@ if (isset($_GET["status"])) {
 ?>
 <section class="flex_container">
     <div>
-        <a id="logo" href="https://www.saromusiikki.fi/treenis" target="_blank">
-            <img id="logo" src="../Sopimussivusto/images/saro_vaaka.jpg"></a>
+        <a id="logo" href="https://www.saromusiikki.fi" target="_blank">
+            <img id="logo" src="../Sopimussivusto/images/saro_vaaka.jpg" alt="Särön logo rokkaava ilves"></a>
     </div>
     <div>
         <h2>Tervetuloa Särön treenikselle</h2>
@@ -26,6 +26,8 @@ if (isset($_GET["status"])) {
         <p>Tällä sivustolla voit tehdä treeniksen käyttösopimuksen,
             tulostaa ja allekirjoittaa sen ja toimittaa sitten treeniksen yhteyshenkilölle.<br>
             <br> Voit myös päivittää voimassa olevan sopimuksen tietoja.
+        </p>
+        <p> Täältä voit (myöhemmin) myös katsoa Särön treeniksellä harjoittelevien bändien omia sivuja.
         </p>
     </div>
     <div>
