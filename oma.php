@@ -18,14 +18,14 @@ include 'includes/dbcon.inc.php';
 <!-- BÄNDIN TIEDOT ULOSKIRJOITETTUNA -->
 
 <div class="oma_kooste">
-    <p>Voimassa olevat tiedot näet tästä. Jos taulukko on tyhjä, sinun tulee täyttää tiedot ao. tiedonsyöttölomakkeella.</p>
+    <p>Voimassa olevat tiedot näet tästä. Jos taulukko on tyhjä, sinun tulee täyttää tiedot ao. harmaalla lomakkeella.</p>
     <table>
         <tr class="grey">
             <th>Bändin nimi</th>
             <th>Treenaus alk.</th>
-            <th>Bändin jäsenmäärä</th>
-            <th>Bändin yhteyshenkilö</th>
-            <th>Yhteyshenkilön puh.</th>
+            <th>Bändin jäsenet</th>
+            <th>Bändin yht.hlö</th>
+            <th>Yht.hlön puh.</th>
             <th>Bändin kk-maksu</th>
         </tr>
 
@@ -52,7 +52,7 @@ include 'includes/dbcon.inc.php';
 
 <table>
     <tr>
-        <button><a href="tulosta.php" target="_blank">Tiedot ovat oikein, tulosta sopimus näytölle</a></button>
+        <button><a href="tulosta.php" target="_blank">Tulosta sopimus näytölle</a></button>
     </tr>
 </table>
 
