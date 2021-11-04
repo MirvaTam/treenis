@@ -14,7 +14,5 @@
 <a id="logo" href="https://www.saromusiikki.fi/treenis" target="_blank">
 <img id="logo" src="../Sopimussivusto/images/saro_vaaka.jpg" alt="Särön logo rokkaava ilves">
 </a>
-
 </body>
-
 </html>
