@@ -4,7 +4,7 @@
     <section class="form-purple">
         <p>Lähetä meille palautetta</p>
 
-        <form class="form-purple" action="includes/feedback.inc.php" method="post">
+        <form action="includes/feedback.inc.php" method="post">
             <input type="text" name="palaute" placeholder="Kirjoita palaute tähän" autocomplete="off">
             <input type="text" name="email" placeholder="Email, johon voimme tarvittaessa olla yhteydessä" autocomplete="off">
             <br><button type="submit" name="submit">Lähetä palaute</button>

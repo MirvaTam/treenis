@@ -33,6 +33,7 @@ session_start();
     <div class="nav-links">
       <ul>
         <li><a class="active" href="index.php">Etusivu</a></li>
+        <li><a href='lista.php'>Lista</a></li>
         <?php
         if (isset($_SESSION["useruid"])) {
           echo "<li><a href='tulosta.php'>Näytä sopimus</a></li>";
