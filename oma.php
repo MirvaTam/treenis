@@ -6,7 +6,7 @@ include 'includes/dbcon.inc.php';
 <!-- Divin avaus tulee headeristä div class="wrapper"-->
 <!-- OTSIKKO JA ILMOITUKSIA -->
 
-<div class="container sopimus">
+<div>
     <p> <?php
         if (isset($_SESSION["username"])) {
             echo "<p class='notify'>Olet kirjautunut sisään nimellä: " . $_SESSION["username"] . ".</p>";
@@ -17,10 +17,10 @@ include 'includes/dbcon.inc.php';
 
 <!-- BÄNDIN TIEDOT ULOSKIRJOITETTUNA -->
 
-<div class="oma_kooste">
+<div>
     <p>Voimassa olevat tiedot näet tästä. Jos taulukko on tyhjä, sinun tulee täyttää tiedot ao. harmaalla lomakkeella.</p>
     <table>
-        <tr class="grey">
+        <tr>
             <th>Bändin nimi</th>
             <th>Treenaus alk.</th>
             <th>Bändin jäsenet</th>
@@ -32,10 +32,10 @@ include 'includes/dbcon.inc.php';
         <!-- tässä kohtaa noudetaan tiedot taulukkoon -->
         <?php
         if (!session_id()) session_start();
-        include 'includes/info.inc.php'; // hakee variaabelit tuolta 
+        include 'includes/info.inc.php'; // hakee variaabelit tuolta EI TOIMI
 
         if (isset($_SESSION["username"])) {
-            // echo $_SESSION["username"]; // toimii oikein
+            // echo $_SESSION["username"]; // toimii oikein EI TOIMI
             $yht_hlo = $_SESSION["username"];
         }
         echo '<tr>

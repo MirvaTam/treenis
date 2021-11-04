@@ -29,8 +29,6 @@ include 'includes/dbcon.inc.php';
             <?php
             if (!session_id()) session_start();
 
-            $yht_hlo = $_SESSION['username'];
-
             $sql = 'SELECT * FROM agreements;';
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
@@ -64,7 +62,7 @@ include 'includes/dbcon.inc.php';
 <!-- AO. TOIMII OIKEIN -->
        <?php if (!session_id()) session_start();
 
-        if (isset($_SESSION["username"])) {
+       /* if (isset($_SESSION["username"])) {
             echo '<br>'.$_SESSION["username"].'<br>'; // toimii oikein
             $yht_hlo = $_SESSION["username"];
         }
@@ -74,7 +72,7 @@ include 'includes/dbcon.inc.php';
         while ($row = mysqli_fetch_assoc($result)) {
             $puh = $row['band_Tel'];
             echo '<br>'.$puh.'<br>';
-        }
+        }*/
         ?>
 
 <?php

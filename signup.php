@@ -1,5 +1,6 @@
 <?php
 include_once 'header.php';
+require_once 'mailer/user_activation.php';
 ?>
 <!-- Divin avaus tulee headeristä div class="wrapper"-->
 <?php
@@ -36,11 +37,11 @@ if (isset($_GET["error"])){
 
 <div class="form-yellow">
     <form action="includes/signup.inc.php" method="post">
-        <input type="text" name="name" placeholder="Etunimi Sukunimi" autocomplete="off" autofocus>
-        <br><input type="text" name="email" placeholder="Email" autocomplete="off">
-        <br><input type="text" name="uid" placeholder="Käyttäjänimi" autocomplete="off">
-        <br><input type="password" name="pwd" placeholder="Salasana" autocomplete="off">
-        <br><input type="password" name="pwdrepeat" placeholder="Salasana uudelleen" autocomplete="off">
+        <input type="text" name="name" placeholder="Etunimi Sukunimi" autocomplete="off" required autofocus>
+        <br><input type="text" name="email" placeholder="Email" autocomplete="off" required>
+        <br><input type="text" name="uid" placeholder="Käyttäjänimi" autocomplete="off" required>
+        <br><input type="password" name="pwd" placeholder="Salasana" autocomplete="off" required>
+        <br><input type="password" name="pwdrepeat" placeholder="Salasana uudelleen" autocomplete="off" required>
         <br><button type="submit" name="submit">Luo uusi käyttäjä</button>
     </form>
 </div>

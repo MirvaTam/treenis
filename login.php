@@ -29,8 +29,8 @@ if (isset($_GET["error"])) {
 
     <div class="form-yellow">
         <form action="includes/login.inc.php" method="post">
-            <input type="text" name="uid" placeholder="Käyttäjänimi" autocomplete="off" autofocus>
-            <br><input type="password" name="pwd" placeholder="Salasana" autocomplete="off">
+            <input type="text" name="uid" placeholder="Käyttäjänimi" autocomplete="off" autofocus required>
+            <br><input type="password" name="pwd" placeholder="Salasana" autocomplete="off" required>
             <br><button type="submit" name="submit">Kirjaudu sisään</button>
         </form>
     </div>

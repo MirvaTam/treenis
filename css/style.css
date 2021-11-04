@@ -11,22 +11,22 @@ body {
   margin: 10px;
   padding: 10px;
 }
-.column { /* usage? */
+/*.column {  usage? 
   float: left;
   width: 50%;
   padding: 15px;
-}
-.flex_container { /* etusivu section +  */
+}*/
+.flex_container { /* etusivu section + login + signup */
   display: flex;
   flex-direction: column;
   justify-content: center; /* keskitä vaaka-suunnassa*/
 }
-.flex_container > div { /* etusivu */
+.flex_container > div { /* etusivu + login + signup  */
   display: flex;
   flex-direction: column;
   justify-content: center; /* keskitä vaaka-suunnassa*/
   /*background-color: #8747b7;*/
-  width: 80%;
+  width: 100%;
   margin: auto;
   text-align: center;
 }
@@ -40,16 +40,11 @@ body {
   margin: 10px;
   text-align: center;
 }
-.nappula { /* usage? */
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 #iso_kuva {
   /* ETUSIVUN KUVAN ASETUKSET */
-  max-width: 100%;
-  height: auto;
+  width: 70%;
+  /*height: auto;*/
   display: block; /*  display block + margin l+r auto == center the image*/
   margin-left: auto;
   margin-right: auto;
@@ -74,7 +69,7 @@ p {
 .form-purple{ /* tee tämmönen ja poista muut */
   background-color: #8656C2;
   border-radius: 10px;
-  margin: 10px;
+  margin: 20px;
   padding: 10px;
 }
 .form-grey { /* tee tämmönen ja poista muut */
@@ -83,17 +78,6 @@ p {
   margin: 10px;
   padding: 10px;
 }
-/* !POISTA! jatkossa form-grey 
-.form-band, .form-jasenet {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: fit-content;
-  background-color: #B9B9B9;
-  border-radius: 10px;
-  padding: 20px;
-} */
 
 input,
 select {
@@ -104,8 +88,11 @@ select {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  width: 100%;
   border-radius: 15px;
+  /*width: 80%; !!! */
+}
+input {
+  width: 100%;
 }
 input:focus, select:focus {
   /* yritän saada siniset rajat pois tiedonsyöttö kentistä*/
@@ -164,8 +151,8 @@ footer > p {
   width: 100px;
   height: 100px;
   display: block; /*  display block + margin l+r auto == center the image*/
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto; /*  display block + margin l+r auto == center the image*/
+  margin-right: auto; /*  display block + margin l+r auto == center the image*/
 }
 
 /* NAVIGAATIO ASETUKSET */
