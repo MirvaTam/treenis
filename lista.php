@@ -15,7 +15,7 @@ include 'includes/dbcon.inc.php';
 
 <body>
     <div class="sopimus">
-        <p>Lista kaikista treeniksen bändeistä:</p>
+        <p>Lista kaikista Treeniksen bändeistä:</p>
         <table>
             <tr>
                 <th>Bändin nimi</th>
@@ -43,7 +43,7 @@ include 'includes/dbcon.inc.php';
             ?>
         </table>
 
-      <?php /*
+        <?php /*
         if (!session_id()) session_start();
       
       $yht_hlo = $_SESSION["username"];
@@ -57,12 +57,12 @@ include 'includes/dbcon.inc.php';
      $band_start = $row['band_Start'];
      $band_contact = $row['band_Contact'];
      echo $band_name, $band_members, $band_start, $band_contact; */
-     ?>
+        ?>
 
-<!-- AO. TOIMII OIKEIN -->
-       <?php if (!session_id()) session_start();
+        <!-- AO. TOIMII OIKEIN -->
+        <?php if (!session_id()) session_start();
 
-       /* if (isset($_SESSION["username"])) {
+        /* if (isset($_SESSION["username"])) {
             echo '<br>'.$_SESSION["username"].'<br>'; // toimii oikein
             $yht_hlo = $_SESSION["username"];
         }
@@ -75,9 +75,9 @@ include 'includes/dbcon.inc.php';
         }*/
         ?>
 
-<?php
-    include_once 'footer.php';
-?>
+        <?php
+        include_once 'footer.php';
+        ?>
 
 
         <!-- 
